@@ -44,11 +44,12 @@ jobs:
 
       - name: Run Playwright tests
         run: npx playwright test
-        continue-on-error: true # Still build the report even if tests fail
+        continue-on-error: true
 
-      - name: Generate Allure report
-        if: ${{ !cancelled() }}
-        run: npx allure generate allure-results --clean -o allure-report
+      - name: Generate Allure Report
+        run: |
+          npx allure-commandline generate allure-results --clean -o allure-report
+          cp allure-report/index.html allure-report/404.html
 
       - name: Upload Playwright HTML report
         uses: actions/upload-artifact@v4

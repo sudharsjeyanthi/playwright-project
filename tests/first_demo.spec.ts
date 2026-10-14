@@ -36,7 +36,7 @@ test('GoToWebsite 1', async ({ page }) => {
     await femaleRadio.scrollIntoViewIfNeeded();
     await ageRadio.check();
     await ageRadio.scrollIntoViewIfNeeded();
-    await page.getByRole('button', { name: /show selected/i }).last().click();
+    await page.getByRole('button', { name: "Show Selected Values" }).click();
 
     await expect(femaleRadio).toBeChecked();
     await expect(ageRadio).toBeChecked();
