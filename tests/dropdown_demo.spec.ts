@@ -6,6 +6,7 @@ test('Dropdown page', async ({ page }) => {
 
 
     const simpleDropdown = page.locator('select').nth(0);
+
     await simpleDropdown.scrollIntoViewIfNeeded();
     await simpleDropdown.selectOption('Option 2');
     await expect(simpleDropdown.locator('option:checked')).toHaveText('Option 1');
