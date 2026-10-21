@@ -1,36 +1,67 @@
 
 import { Page, expect } from '@playwright/test';
-import { NavigationLocators } from '../Locators/NavigationLocators';
+import { InteractionLocators } from '../Locators/InteractionLocators';
+import { NavigationPage } from './NavigationPage';
 
-export class NavigationPage {
-    readonly locators: NavigationLocators;
+export class InteractionPage {
+    locators: InteractionLocators;
+    navigation: NavigationPage;
 
     constructor(private page: Page) {
-        this.locators = new NavigationLocators(page);
+        this.locators = new InteractionLocators(page);
+        this.navigation = new NavigationPage(page);
     }
 
-    async openWebsite() {
-        await this.page.goto('/');
-        await expect(this.page).toHaveURL('/');
+    async testIframe() {
+        await this.navigation.openIframeCard();
+
+        await this.locators.iframeButton1.click();
+        await expect(this.locators.iframeMessage1).toBeVisible();
+
+        await this.locators.iframeButton2.click();
+        await expect(this.locators.iframeMessage2).toBeVisible();
     }
 
-    async openIframeCard() {
-        await this.openWebsite();
-        await this.locators.iframeCard.click();
+    async testRadioButtons() {
+        await this.navigation.openRadioCard();
+
+        await this.locators.femaleFirst.check();
+        await expect(this.locators.femaleFirst).toBeChecked();
+
+        await this.locators.showGenderButton.click();
+
+        await this.locators.showGenderButton.click();
+
+        await this.locators.radioButton1.check();
+        await expect(this.locators.radioButton1).toBeChecked();
+        await expect(this.locators.disabledRadio).toBeDisabled();
+
+        await this.locators.femaleLast.check();
+        await this.locators.age.check();
+
+        await this.locators.showValuesButton.click();
+
+        await expect(this.locators.femaleLast).toBeChecked();
+        await expect(this.locators.age).toBeChecked();
     }
 
-    async openRadioCard() {
-        await this.openWebsite();
-        await this.locators.radioCard.click();
-    }
+    async testCheckboxes() {
+        await this.navigation.openCheckboxCard();
 
-    async openCheckboxCard() {
-        await this.openWebsite();
-        await this.locators.checkboxCard.click();
-    }
+        await expect(this.locators.checkboxHeading).toBeVisible();
 
-    async openFormCard() {
-        await this.openWebsite();
-        await this.locators.formCard.click();
+        await this.locators.singleCheckbox.check();
+        await expect(this.locators.singleCheckbox).toBeChecked();
+
+        await this.locators.singleCheckbox.uncheck();
+        await expect(this.locators.singleCheckbox).not.toBeChecked();
+
+        await this.locators.enableCheckbox1.check();
+        await this.locators.enableCheckbox2.check();
+
+        await expect(this.locators.disabledCheckbox3).toBeDisabled();
+        await expect(this.locators.disabledCheckbox4).toBeDisabled();
+
+        await this.locators.checkAllButton.click();
     }
 }

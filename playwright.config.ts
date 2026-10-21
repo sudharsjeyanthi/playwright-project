@@ -18,8 +18,10 @@ export default defineConfig({
 
   use: {
     // Ensures a screenshot is saved on failure and linked to Allure automatically
+    baseURL: 'https://testing.qaautomationlabs.com/',
     screenshot: 'only-on-failure',
     trace: 'on-first-retry',
+
   },
 
   projects: [

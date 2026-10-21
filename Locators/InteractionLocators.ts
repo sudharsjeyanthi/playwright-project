@@ -2,7 +2,7 @@
 import { Page } from '@playwright/test';
 
 export class InteractionLocators {
-    constructor(private page: Page) {}
+    constructor(private page: Page) { }
 
     // Iframe
     get iframeButton1() {
@@ -99,8 +99,7 @@ export class InteractionLocators {
 
     get checkboxHeading() {
         return this.page.getByRole('heading', {
-            name: 'Checkbox Demo',
-            exact: true,
+            name: 'Checkbox Demo'
         });
     }
 }

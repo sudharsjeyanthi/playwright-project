@@ -2,7 +2,7 @@
 import { Page, Locator } from '@playwright/test';
 
 export class FormTableLocators {
-    constructor(private page: Page) {}
+    constructor(private page: Page) { }
 
     // Web table
     get webTableLink() {

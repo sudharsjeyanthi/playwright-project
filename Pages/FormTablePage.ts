@@ -5,8 +5,8 @@ import { NavigationPage } from './NavigationPage';
 import { WebTableData, UserFormData } from '../Data/DataProvider';
 
 export class FormTablePage {
-    readonly locators: FormTableLocators;
-    readonly navigation: NavigationPage;
+    locators: FormTableLocators;
+    navigation: NavigationPage;
 
     constructor(private page: Page) {
         this.locators = new FormTableLocators(page);
