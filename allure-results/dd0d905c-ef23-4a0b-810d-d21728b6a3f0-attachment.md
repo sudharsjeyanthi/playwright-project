@@ -1,0 +1,278 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: pom_demo2.spec.ts >> Table and Checkbox Tests >> Add a web table record
+- Location: tests/pom_demo2.spec.ts:8:9
+
+# Error details
+
+```
+Error: expect(locator).toBeVisible() failed
+
+Locator: getByText('hi', { exact: true }).first()
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" getByText('hi', { exact: true }).first() with timeout 5000ms
+  - waiting for getByText('hi', { exact: true }).first()
+
+```
+
+```yaml
+- banner:
+  - link "QA Automation Labs":
+    - /url: https://qaautomationlabs.com/
+    - img "QA Automation Labs"
+  - button "Toggle navigation": ☰
+  - search:
+    - searchbox "Search"
+- complementary:
+  - link " Testing Tools":
+    - /url: index.php
+  - navigation:
+    - menu:
+      - listitem:
+        - link " Dashboard":
+          - /url: index.php
+          - text: 
+          - paragraph: Dashboard
+      - listitem:
+        - link " Checkbox":
+          - /url: checkbox.php
+          - text: 
+          - paragraph: Checkbox
+      - listitem:
+        - link " Radio Button":
+          - /url: radio-button.php
+          - text: 
+          - paragraph: Radio Button
+      - listitem:
+        - link " Dropdown":
+          - /url: dropdown.php
+          - text: 
+          - paragraph: Dropdown
+      - listitem:
+        - link " Form":
+          - /url: form.php
+          - text: 
+          - paragraph: Form
+      - listitem:
+        - link " Web Table":
+          - /url: web-table.php
+          - text: 
+          - paragraph: Web Table
+      - listitem:
+        - link " iFrame":
+          - /url: iframe.php
+          - text: 
+          - paragraph: iFrame
+      - listitem:
+        - link " Shadow DOM":
+          - /url: shadow-dom.php
+          - text: 
+          - paragraph: Shadow DOM
+      - listitem:
+        - link " Drag & Drop":
+          - /url: drag-and-drop.php
+          - text: 
+          - paragraph: Drag & Drop
+      - listitem:
+        - link " Notifications":
+          - /url: notifications.php
+          - text: 
+          - paragraph: Notifications
+      - listitem:
+        - link " JavaScript Alert":
+          - /url: javaScript-alert.php
+          - text: 
+          - paragraph: JavaScript Alert
+      - listitem:
+        - link " File Upload":
+          - /url: file-upload.php
+          - text: 
+          - paragraph: File Upload
+      - listitem:
+        - link " File Download":
+          - /url: file-download.php
+          - text: 
+          - paragraph: File Download
+      - listitem:
+        - link " Window Popup Modal":
+          - /url: window-popup-modal.php
+          - text: 
+          - paragraph: Window Popup Modal
+      - listitem:
+        - link " List Box":
+          - /url: list-box.php
+          - text: 
+          - paragraph: List Box
+      - listitem:
+        - link " Slider":
+          - /url: slider.php
+          - text: 
+          - paragraph: Slider
+- heading " Automation snippets — Web Table" [level=3]
+- text: 
+- tablist:
+  - listitem:
+    - link "Playwright":
+      - /url: "#"
+  - listitem:
+    - link "Selenium":
+      - /url: "#"
+  - listitem:
+    - link "Cypress":
+      - /url: "#"
+- button "Copy"
+- code: // search, then assert a row await page.fill('#searchInput', 'John'); await expect(page.locator('#dataTable tbody tr')).toHaveCount(1); // read a cell const cell = await page.locator('#dataTable tbody tr:first-child td:nth-child(2)').innerText();
+- heading "Table Demo" [level=1]
+- paragraph: Table
+- textbox "New record name":
+  - /placeholder: Name
+- textbox "New record country":
+  - /placeholder: Country
+- button "Add Record"
+- textbox "Search table":
+  - /placeholder: Search...
+- table:
+  - rowgroup:
+    - row "ID Name Country Actions":
+      - columnheader "ID"
+      - columnheader "Name"
+      - columnheader "Country"
+      - columnheader "Actions"
+  - rowgroup:
+    - row "11 Aisha Khan Pakistan Edit Aisha Khan Delete Aisha Khan":
+      - cell "11"
+      - cell "Aisha Khan"
+      - cell "Pakistan"
+      - cell "Edit Aisha Khan Delete Aisha Khan":
+        - button "Edit Aisha Khan": 
+        - button "Delete Aisha Khan": 
+    - row "12 Diego Fernandez Argentina Edit Diego Fernandez Delete Diego Fernandez":
+      - cell "12"
+      - cell "Diego Fernandez"
+      - cell "Argentina"
+      - cell "Edit Diego Fernandez Delete Diego Fernandez":
+        - button "Edit Diego Fernandez": 
+        - button "Delete Diego Fernandez": 
+    - row "13 Emma Johnson Australia Edit Emma Johnson Delete Emma Johnson":
+      - cell "13"
+      - cell "Emma Johnson"
+      - cell "Australia"
+      - cell "Edit Emma Johnson Delete Emma Johnson":
+        - button "Edit Emma Johnson": 
+        - button "Delete Emma Johnson": 
+    - row "14 Nina Petrova Russia Edit Nina Petrova Delete Nina Petrova":
+      - cell "14"
+      - cell "Nina Petrova"
+      - cell "Russia"
+      - cell "Edit Nina Petrova Delete Nina Petrova":
+        - button "Edit Nina Petrova": 
+        - button "Delete Nina Petrova": 
+    - row "15 Kwame Mensah Ghana Edit Kwame Mensah Delete Kwame Mensah":
+      - cell "15"
+      - cell "Kwame Mensah"
+      - cell "Ghana"
+      - cell "Edit Kwame Mensah Delete Kwame Mensah":
+        - button "Edit Kwame Mensah": 
+        - button "Delete Kwame Mensah": 
+    - row "16 Cbe India Edit Cbe Delete Cbe":
+      - cell "16"
+      - cell "Cbe"
+      - cell "India"
+      - cell "Edit Cbe Delete Cbe":
+        - button "Edit Cbe": 
+        - button "Delete Cbe": 
+- text: Show
+- combobox "Entries per page":
+  - option "5"
+  - option "10" [selected]
+  - option "25"
+  - option "50"
+- text: entries Showing 11 to 16 of 16 entries
+- list:
+  - listitem:
+    - link "Previous":
+      - /url: "#"
+  - listitem:
+    - link "1":
+      - /url: "#"
+  - listitem:
+    - link "2":
+      - /url: "#"
+  - listitem:
+    - link "Next":
+      - /url: "#"
+- contentinfo:
+  - paragraph:
+    - text: © 2026
+    - link "QA Automation Labs":
+      - /url: https://qaautomationlabs.com
+    - text: . All Rights Reserved.
+- button "Inspect locators": 
+- button "Toggle dark mode": 
+- button "Toggle challenge mode": 
+```
+
+# Test source
+
+```ts
+  1  | 
+  2  | import { Page, expect } from '@playwright/test';
+  3  | import { FormTableLocators } from '../Locators/FormTableLocators';
+  4  | import { NavigationPage } from './NavigationPage';
+  5  | import { WebTableData, UserFormData } from '../Data/DataProvider';
+  6  | 
+  7  | export class FormTablePage {
+  8  |     locators: FormTableLocators;
+  9  |     navigation: NavigationPage;
+  10 | 
+  11 |     constructor(private page: Page) {
+  12 |         this.locators = new FormTableLocators(page);
+  13 |         this.navigation = new NavigationPage(page);
+  14 |     }
+  15 | 
+  16 |     async addTableRecord(data: WebTableData) {
+  17 |         await this.navigation.openWebTableCard();
+  18 |         await this.locators.nameInput.fill(data.name);
+  19 |         await this.locators.countryInput.fill(data.country);
+  20 | 
+  21 |         await this.locators.addRecordButton.click();
+  22 | 
+  23 |         await expect(
+  24 |             this.locators.textCell('hi')
+> 25 |         ).toBeVisible();
+     |           ^ Error: expect(locator).toBeVisible() failed
+  26 | 
+  27 |         await expect(
+  28 |             this.locators.textCell(data.country)
+  29 |         ).toBeVisible();
+  30 |     }
+  31 | 
+  32 |     async submitForm(data: UserFormData) {
+  33 |         await this.navigation.openFormCard();
+  34 | 
+  35 |         await this.locators.firstName.fill(data.firstName);
+  36 |         await this.locators.middleName.fill(data.middleName);
+  37 |         await this.locators.lastName.fill(data.lastName);
+  38 |         await this.locators.email.fill(data.email);
+  39 |         await this.locators.password.fill(data.password);
+  40 |         await this.locators.address.fill(data.address);
+  41 |         await this.locators.city.fill(data.city);
+  42 |         await this.locators.state.fill(data.state);
+  43 |         await this.locators.pinCode.fill(data.pinCode);
+  44 | 
+  45 |         await this.locators.submitButton.scrollIntoViewIfNeeded();
+  46 |         await this.locators.submitButton.click();
+  47 |     }
+  48 | }
+  49 | 
+```

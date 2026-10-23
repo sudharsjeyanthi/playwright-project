@@ -13,7 +13,10 @@ export class NavigationPage {
         await this.page.goto('/');
         await expect(this.page).toHaveURL('/');
     }
-
+    async openWebTableCard() {
+        await this.openWebsite();
+        await this.locators.webTableCard.click();
+    }
     async openIframeCard() {
         await this.openWebsite();
         await this.locators.iframeCard.click();

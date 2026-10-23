@@ -14,17 +14,14 @@ export class FormTablePage {
     }
 
     async addTableRecord(data: WebTableData) {
-        await this.navigation.openWebsite();
-
-        await this.locators.webTableLink.click();
-
+        await this.navigation.openWebTableCard();
         await this.locators.nameInput.fill(data.name);
         await this.locators.countryInput.fill(data.country);
 
         await this.locators.addRecordButton.click();
 
         await expect(
-            this.locators.textCell(data.name)
+            this.locators.textCell('hi')
         ).toBeVisible();
 
         await expect(

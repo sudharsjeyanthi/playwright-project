@@ -3,6 +3,9 @@ import { Page } from '@playwright/test';
 
 export class NavigationLocators {
     constructor(private page: Page) { }
+    get webTableCard() {
+        return this.page.getByTestId('tool-card-web-table');
+    }
 
     get iframeCard() {
         return this.page.getByTestId('tool-card-iframe');
