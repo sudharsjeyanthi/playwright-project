@@ -57,7 +57,9 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Sanity tests
-        run: npx playwright test --grep "@sanity"
+        run: | 
+          rm -rf allure-results
+          npx playwright test --grep "@sanity"
         env:
           BROWSER: ${{ github.event.inputs.browser }}
           TEST_TYPE: 'sanity'
