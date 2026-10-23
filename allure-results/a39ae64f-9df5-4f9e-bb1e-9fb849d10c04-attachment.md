@@ -1,0 +1,69 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: pom_demo1.spec.ts >> Iframe,RadioBtn,Form Tests >> Fill and submit the form
+- Location: tests/pom_demo1.spec.ts:18:9
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+```
+Error: page.goto: Test timeout of 30000ms exceeded.
+Call log:
+  - navigating to "https://testing.qaautomationlabs.com/", waiting until "load"
+
+```
+
+# Test source
+
+```ts
+  1  | 
+  2  | import { Page, expect } from '@playwright/test';
+  3  | import { NavigationLocators } from '../Locators/NavigationLocators';
+  4  | 
+  5  | export class NavigationPage {
+  6  |     readonly locators: NavigationLocators;
+  7  | 
+  8  |     constructor(private page: Page) {
+  9  |         this.locators = new NavigationLocators(page);
+  10 |     }
+  11 | 
+  12 |     async openWebsite() {
+> 13 |         await this.page.goto('/');
+     |                         ^ Error: page.goto: Test timeout of 30000ms exceeded.
+  14 |         await expect(this.page).toHaveURL('/');
+  15 |     }
+  16 |     async openWebTableCard() {
+  17 |         await this.openWebsite();
+  18 |         await this.locators.webTableCard.click();
+  19 |     }
+  20 |     async openIframeCard() {
+  21 |         await this.openWebsite();
+  22 |         await this.locators.iframeCard.click();
+  23 |     }
+  24 | 
+  25 |     async openRadioCard() {
+  26 |         await this.openWebsite();
+  27 |         await this.locators.radioCard.click();
+  28 |     }
+  29 | 
+  30 |     async openCheckboxCard() {
+  31 |         await this.openWebsite();
+  32 |         await this.locators.checkboxCard.click();
+  33 |     }
+  34 | 
+  35 |     async openFormCard() {
+  36 |         await this.openWebsite();
+  37 |         await this.locators.formCard.click();
+  38 |     }
+  39 | }
+  40 | 
+```

@@ -1,0 +1,403 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: dropdown_demo.spec.ts >> Dropdown page
+- Location: tests/dropdown_demo.spec.ts:3:5
+
+# Error details
+
+```
+Error: expect(locator).toHaveText(expected) failed
+
+Locator:  locator('select').first().locator('option:checked')
+Expected: "Option 1"
+Received: "Option 2"
+Timeout:  5000ms
+
+Call log:
+  - Expect "toHaveText" locator('select').first().locator('option:checked') with timeout 5000ms
+  - waiting for locator('select').first().locator('option:checked')
+    11 × locator resolved to <option value="2" selected="selected">Option 2</option>
+       - unexpected value "Option 2"
+
+```
+
+```yaml
+- paragraph:
+  - link "PMP Practice":
+    - /url: https://pmp.expandtesting.com/
+  - text: "| Free PMP Certification Mock Exam Test +900 Questions & Quizzes"
+  - link "Get Certified":
+    - img
+    - text: Get Certified
+- banner:
+  - navigation "Main navigation":
+    - link "SUT":
+      - /url: /
+      - 'img "Best Website for Practice Automation Testing: Free UI and REST API Examples and Apps. Using Cypress, Playwright, Selenium, WebdriverIO and Postman."'
+      - text: Practice
+    - list:
+      - listitem:
+        - button "Demos"
+      - listitem:
+        - link "Tools":
+          - /url: /#tools
+      - listitem:
+        - link "Tips":
+          - /url: /tips
+      - listitem:
+        - link "Test Cases":
+          - /url: /test-cases
+      - listitem:
+        - link "API Testing":
+          - /url: /notes/api/api-docs/
+      - listitem:
+        - link "About":
+          - /url: /about
+    - list
+    - link "Free ISTQB Mock Exams":
+      - /url: https://istqb.expandtesting.com/
+- main:
+  - paragraph:
+    - text: Do you enjoy this platform? ❤️
+    - link "Buy us a coffee":
+      - /url: https://www.buymeacoffee.com/expandtesting
+  - insertion:
+    - heading "These are topics related to the article that might interest you" [level=2]: Discover more
+    - link "Try Dev Tools"
+    - link "Source Robotics"
+    - link "API testing tools"
+    - link "Automation testing practice"
+    - link "Automation testing guide"
+    - link "Testing tools comparison"
+    - link "Practice automation scenarios"
+    - link "Compare Browsers"
+  - navigation "breadcrumb mb-2":
+    - list:
+      - listitem:
+        - link "Home":
+          - /url: /
+      - listitem: / Dropdown List
+  - heading "Dropdown List page for Automation Testing Practice" [level=1]
+  - paragraph: You can use this Dropdown page for practicing test automation with Selenium or other tools like Playwright, Cypress, etc.
+  - heading "Simple dropdown" [level=2]
+  - combobox:
+    - option "Please select an option" [disabled]
+    - option "Option 1"
+    - option "Option 2" [selected]
+  - heading "Select your date of birth" [level=2]
+  - text: "Elements per Page:"
+  - combobox "Elements per Page:":
+    - option "10" [selected]
+    - option "20"
+    - option "50"
+    - option "100"
+  - heading "Country selection" [level=2]
+  - paragraph:
+    - combobox:
+      - option "Select country" [disabled] [selected]
+      - option "Afghanistan"
+      - option "Aland Islands"
+      - option "Albania"
+      - option "Algeria"
+      - option "American Samoa"
+      - option "Andorra"
+      - option "Angola"
+      - option "Anguilla"
+      - option "Antarctica"
+      - option "Antigua and Barbuda"
+      - option "Argentina"
+      - option "Armenia"
+      - option "Aruba"
+      - option "Australia"
+      - option "Austria"
+      - option "Azerbaijan"
+      - option "Bahamas"
+      - option "Bahrain"
+      - option "Bangladesh"
+      - option "Barbados"
+      - option "Belarus"
+      - option "Belgium"
+      - option "Belize"
+      - option "Benin"
+      - option "Bermuda"
+      - option "Bhutan"
+      - option "Bolivia"
+      - option "Bonaire, Sint Eustatius and Saba"
+      - option "Bosnia and Herzegovina"
+      - option "Botswana"
+      - option "Bouvet Island"
+      - option "Brazil"
+      - option "British Indian Ocean Territory"
+      - option "Brunei Darussalam"
+      - option "Bulgaria"
+      - option "Burkina Faso"
+      - option "Burundi"
+      - option "Cambodia"
+      - option "Cameroon"
+      - option "Canada"
+      - option "Cape Verde"
+      - option "Cayman Islands"
+      - option "Central African Republic"
+      - option "Chad"
+      - option "Chile"
+      - option "China"
+      - option "Christmas Island"
+      - option "Cocos (Keeling) Islands"
+      - option "Colombia"
+      - option "Comoros"
+      - option "Congo"
+      - option "Congo, Democratic Republic of the Congo"
+      - option "Cook Islands"
+      - option "Costa Rica"
+      - option "Cote D'Ivoire"
+      - option "Croatia"
+      - option "Cuba"
+      - option "Curacao"
+      - option "Cyprus"
+      - option "Czech Republic"
+      - option "Denmark"
+      - option "Djibouti"
+      - option "Dominica"
+      - option "Dominican Republic"
+      - option "Ecuador"
+      - option "Egypt"
+      - option "El Salvador"
+      - option "Equatorial Guinea"
+      - option "Eritrea"
+      - option "Estonia"
+      - option "Ethiopia"
+      - option "Falkland Islands (Malvinas)"
+      - option "Faroe Islands"
+      - option "Fiji"
+      - option "Finland"
+      - option "France"
+      - option "French Guiana"
+      - option "French Polynesia"
+      - option "French Southern Territories"
+      - option "Gabon"
+      - option "Gambia"
+      - option "Georgia"
+      - option "Germany"
+      - option "Ghana"
+      - option "Gibraltar"
+      - option "Greece"
+      - option "Greenland"
+      - option "Grenada"
+      - option "Guadeloupe"
+      - option "Guam"
+      - option "Guatemala"
+      - option "Guernsey"
+      - option "Guinea"
+      - option "Guinea-Bissau"
+      - option "Guyana"
+      - option "Haiti"
+      - option "Heard Island and Mcdonald Islands"
+      - option "Holy See (Vatican City State)"
+      - option "Honduras"
+      - option "Hong Kong"
+      - option "Hungary"
+      - option "Iceland"
+      - option "India"
+      - option "Indonesia"
+      - option "Iran, Islamic Republic of"
+      - option "Iraq"
+      - option "Ireland"
+      - option "Isle of Man"
+      - option "Italy"
+      - option "Jamaica"
+      - option "Japan"
+      - option "Jersey"
+      - option "Jordan"
+      - option "Kazakhstan"
+      - option "Kenya"
+      - option "Kiribati"
+      - option "Korea, Democratic People's Republic of"
+      - option "Korea, Republic of"
+      - option "Kosovo"
+      - option "Kuwait"
+      - option "Kyrgyzstan"
+      - option "Lao People's Democratic Republic"
+      - option "Latvia"
+      - option "Lebanon"
+      - option "Lesotho"
+      - option "Liberia"
+      - option "Libyan Arab Jamahiriya"
+      - option "Liechtenstein"
+      - option "Lithuania"
+      - option "Luxembourg"
+      - option "Macao"
+      - option "Macedonia, the Former Yugoslav Republic of"
+      - option "Madagascar"
+      - option "Malawi"
+      - option "Malaysia"
+      - option "Maldives"
+      - option "Mali"
+      - option "Malta"
+      - option "Marshall Islands"
+      - option "Martinique"
+      - option "Mauritania"
+      - option "Mauritius"
+      - option "Mayotte"
+      - option "Mexico"
+      - option "Micronesia, Federated States of"
+      - option "Moldova, Republic of"
+      - option "Monaco"
+      - option "Mongolia"
+      - option "Montenegro"
+      - option "Montserrat"
+      - option "Morocco"
+      - option "Mozambique"
+      - option "Myanmar"
+      - option "Namibia"
+      - option "Nauru"
+      - option "Nepal"
+      - option "Netherlands"
+      - option "Netherlands Antilles"
+      - option "New Caledonia"
+      - option "New Zealand"
+      - option "Nicaragua"
+      - option "Niger"
+      - option "Nigeria"
+      - option "Niue"
+      - option "Norfolk Island"
+      - option "Northern Mariana Islands"
+      - option "Norway"
+      - option "Oman"
+      - option "Pakistan"
+      - option "Palau"
+      - option "Palestinian Territory, Occupied"
+      - option "Panama"
+      - option "Papua New Guinea"
+      - option "Paraguay"
+      - option "Peru"
+      - option "Philippines"
+      - option "Pitcairn"
+      - option "Poland"
+      - option "Portugal"
+      - option "Puerto Rico"
+      - option "Qatar"
+      - option "Reunion"
+      - option "Romania"
+      - option "Russian Federation"
+      - option "Rwanda"
+      - option "Saint Barthelemy"
+      - option "Saint Helena"
+      - option "Saint Kitts and Nevis"
+      - option "Saint Lucia"
+      - option "Saint Martin"
+      - option "Saint Pierre and Miquelon"
+      - option "Saint Vincent and the Grenadines"
+      - option "Samoa"
+      - option "San Marino"
+      - option "Sao Tome and Principe"
+      - option "Saudi Arabia"
+      - option "Senegal"
+      - option "Serbia"
+      - option "Serbia and Montenegro"
+      - option "Seychelles"
+      - option "Sierra Leone"
+      - option "Singapore"
+      - option "Sint Maarten"
+      - option "Slovakia"
+      - option "Slovenia"
+      - option "Solomon Islands"
+      - option "Somalia"
+      - option "South Africa"
+      - option "South Georgia and the South Sandwich Islands"
+      - option "South Sudan"
+      - option "Spain"
+      - option "Sri Lanka"
+      - option "Sudan"
+      - option "Suriname"
+      - option "Svalbard and Jan Mayen"
+      - option "Swaziland"
+      - option "Sweden"
+      - option "Switzerland"
+      - option "Syrian Arab Republic"
+      - option "Taiwan, Province of China"
+      - option "Tajikistan"
+      - option "Tanzania, United Republic of"
+      - option "Thailand"
+      - option "Timor-Leste"
+      - option "Togo"
+      - option "Tokelau"
+      - option "Tonga"
+      - option "Trinidad and Tobago"
+      - option "Tunisia"
+      - option "Turkey"
+      - option "Turkmenistan"
+      - option "Turks and Caicos Islands"
+      - option "Tuvalu"
+      - option "Uganda"
+      - option "Ukraine"
+      - option "United Arab Emirates"
+      - option "United Kingdom"
+      - option "United States"
+      - option "United States Minor Outlying Islands"
+      - option "Uruguay"
+      - option "Uzbekistan"
+      - option "Vanuatu"
+      - option "Venezuela"
+      - option "Viet Nam"
+      - option "Virgin Islands, British"
+      - option "Virgin Islands, U.s."
+      - option "Wallis and Futuna"
+      - option "Western Sahara"
+      - option "Yemen"
+      - option "Zambia"
+      - option "Zimbabwe"
+  - insertion:
+    - heading "These are topics related to the article that might interest you" [level=2]: Discover more
+    - link "Automation practice website"
+    - link "Cypress automation courses"
+    - link "Playwright testing guide"
+    - link "UI testing resources"
+    - link "REST API examples"
+    - link "Free testing apps"
+    - link "Learn to Code"
+    - link "Try Cloud Tools"
+- contentinfo:
+  - heading "Practice Test Automation WebSite for Web UI and Rest API" [level=4]
+  - paragraph:
+    - text: "Version: e64cd80e | Copyright"
+    - link "Expand Testing":
+      - /url: https://expandtesting.com/
+    - text: "2026"
+- img
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect } from '@playwright/test';
+  2  | 
+  3  | test('Dropdown page', async ({ page }) => {
+  4  |     await page.goto('https://practice.expandtesting.com/dropdown');
+  5  |     await expect(page).toHaveURL('https://practice.expandtesting.com/dropdown');
+  6  | 
+  7  | 
+  8  |     const simpleDropdown = page.locator('select').nth(0);
+  9  | 
+  10 |     await simpleDropdown.scrollIntoViewIfNeeded();
+  11 |     await simpleDropdown.selectOption('Option 2');
+> 12 |     await expect(simpleDropdown.locator('option:checked')).toHaveText('Option 1');
+     |                                                            ^ Error: expect(locator).toHaveText(expected) failed
+  13 | 
+  14 |     const elementsPerPage = page.locator('select').nth(1);
+  15 |     await elementsPerPage.scrollIntoViewIfNeeded();
+  16 |     await elementsPerPage.selectOption('50');
+  17 |     await expect(elementsPerPage.locator('option:checked')).toHaveText('50');
+  18 | 
+  19 |     const countryDropdown = page.locator('select').nth(2);
+  20 |     await countryDropdown.scrollIntoViewIfNeeded();
+  21 |     await page.waitForTimeout(1000);
+  22 |     await countryDropdown.selectOption('India');
+  23 |     await expect(countryDropdown.locator('option:checked')).toHaveText('India');
+  24 | });
+```
