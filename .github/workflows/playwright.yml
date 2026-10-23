@@ -11,9 +11,6 @@ on:
         options:
           - chromium
           - firefox
-          - webkit
-          - chrome
-
       env:
         description: 'Choose environment to run tests'
         required: true
@@ -21,14 +18,7 @@ on:
         type: choice
         options:
           - qa
-          - staging
-          - prod
 
-      suitesToRun:
-        description: "Single suite: ['suiteName'] | Multiple suites: ['suite1','suite2']"
-        required: false
-        default: ''
-        type: string
 
       testtype:
         description: 'Choose test-type to run tests'
@@ -38,7 +28,6 @@ on:
         options:
           - sanity
           - regression
-          - Prod-sanity-custom_suite
 
 # Required permissions to publish to GitHub Pages
 permissions:
